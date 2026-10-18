@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBPropostaCredito", "PBPropostaCredito\PBPropostaCredito.csproj", "{E884680A-D88C-48B7-A28A-4CF366A68BFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46F0B3ED-355A-4DB0-A391-3D8EA6518A34}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E884680A-D88C-48B7-A28A-4CF366A68BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E884680A-D88C-48B7-A28A-4CF366A68BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E884680A-D88C-48B7-A28A-4CF366A68BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E884680A-D88C-48B7-A28A-4CF366A68BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
