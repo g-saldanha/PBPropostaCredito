@@ -1,0 +1,7 @@
+﻿services:
+  pbpropostacredito:
+    image: pbpropostacredito
+    build:
+      context: .
+      dockerfile: PBPropostaCredito/Dockerfile
+
