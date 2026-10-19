@@ -19,8 +19,7 @@ public class ClienteCadastradoConsumer : IConsumer<ClienteCadastrado>
         Console.WriteLine($"\n[MS2] ---> RECEBEU evento ClienteCadastrado! ClienteID: {mensagem.ClienteId}");
 
         var score = CalcularScore(mensagem.Cpf);
-        // var status = score > 100 ? "Aprovado" : "Negado";
-        var status = "Aprovado";
+        var status = score > 100 ? "Aprovado" : "Negado";
 
         var proposta = new Proposta
         {
