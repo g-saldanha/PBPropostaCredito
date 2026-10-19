@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Moq;
 using PBPropostaCredito.Consumers;
 using PBPropostaCredito.Data;
-using PBPropostaCredito.Messages;
+using ParanaBanco.Messages;
 using Xunit;
 
 namespace PBPropostaCredito.Tests.Consumers;

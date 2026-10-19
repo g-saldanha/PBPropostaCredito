@@ -1,6 +1,6 @@
 using MassTransit;
 using PBPropostaCredito.Data;
-using PBPropostaCredito.Messages;
+using ParanaBanco.Messages;
 
 namespace PBPropostaCredito.Consumers;
 
@@ -16,14 +16,16 @@ public class ClienteCadastradoConsumer : IConsumer<ClienteCadastrado>
     public async Task Consume(ConsumeContext<ClienteCadastrado> context)
     {
         var mensagem = context.Message;
+        Console.WriteLine($"\n[MS2] ---> RECEBEU evento ClienteCadastrado! ClienteID: {mensagem.ClienteId}");
 
         var score = CalcularScore(mensagem.Cpf);
-        var status = score > 100 ? "Aprovado" : "Negado";
+        // var status = score > 100 ? "Aprovado" : "Negado";
+        var status = "Aprovado";
 
         var proposta = new Proposta
         {
             Id = Guid.NewGuid(),
-            ClienteId = mensagem.id,
+            ClienteId = mensagem.ClienteId,
             Score = score,
             Status = status,
             DataProcessamento = DateTime.UtcNow,
@@ -31,8 +33,10 @@ public class ClienteCadastradoConsumer : IConsumer<ClienteCadastrado>
 
         _db.Propostas.Add(proposta);
         await _db.SaveChangesAsync();
-
+        Console.WriteLine($"[MS2] Proposta gerada na base. Score: {score} | Status: {status}");
+        Console.WriteLine($"[MS2] Preparando para enviar evento PropostaGerada...");
         await context.Publish(new PropostaGerada(proposta.ClienteId, proposta.Id, proposta.Score, proposta.Status));
+        Console.WriteLine($"[MS2] <--- Evento PropostaGerada enviado com sucesso!\n");
     }
 
     private int CalcularScore(string cpf)

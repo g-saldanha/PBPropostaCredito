@@ -1,6 +1,4 @@
 @PBPropostaCredito_HostAddress = http://localhost:5163
 
-GET {{PBPropostaCredito_HostAddress}}/weatherforecast/
+GET {{PBPropostaCredito_HostAddress}}/api/v1/propostas/acc5dd75-4686-4757-9bde-c5b18537d7b2
 Accept: application/json
-
-###

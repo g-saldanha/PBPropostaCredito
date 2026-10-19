@@ -54,7 +54,6 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
 
 propostasGroup.MapGet("/{clienteId}", async (Guid clienteId, AppDbContext db) =>
 {
